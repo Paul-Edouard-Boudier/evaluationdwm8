@@ -12,7 +12,10 @@ class BaseController extends Controller
 {
     public function index() {
         $vehicles = Vehicle::all();
-        return view('home', ['vehicles' => $vehicles]);
+        // return view('home', ['vehicles' => $vehicles]);
+        $brands = Brand::all();
+        $stockTotal = 0;
+        return view('test', ['brands' => $brands, 'stockTotal' => $stockTotal]);
     }
 
     public function create() {
