@@ -8,7 +8,7 @@
         <ul>
             @foreach($brand->vehicles as $vehicle)
                 <?php $stock += intval($vehicle->stock) ?>
-                    <li><a href="{{url('/update/'.$vehicle->id)}}">{{$vehicle->name}}</a>, stock: {{$vehicle->stock}}</li>
+                    <li><a href="{{url('/vehicle/update/'.$vehicle->id)}}">{{$vehicle->name}}</a>, stock: {{$vehicle->stock}}</li>
             @endforeach
         </ul>
         <?php $stockTotal += $stock?>

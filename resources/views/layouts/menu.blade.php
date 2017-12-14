@@ -20,7 +20,7 @@
                 <a class="nav-link" href="{{url('/create/brand')}}">Add a brand to your garage</a>
             </li>--}}
             <li class="nav-item active">
-                <a class="nav-link" href="#">Quick view</a>
+                <a class="nav-link" href="{{url('/resume')}}">Quick view</a>
             </li>
         </ul>
     </div>

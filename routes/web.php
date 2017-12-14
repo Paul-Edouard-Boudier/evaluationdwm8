@@ -12,6 +12,13 @@
 */
 
 Route::get('/', 'BaseController@index');
+Route::get('/resume', 'BaseController@resume');
+Route::get('/brands', 'BaseController@brands');
+Route::get('/vehicles', 'BaseController@vehicles');
+
+Route::get('/l5v', 'BaseController@l5v');
+Route::get('/l5b', 'BaseController@l5b');
+
 Route::get('/create/vehicle', 'BaseController@createVehicle');
 Route::get('/create/brand', 'BaseController@createBrand');
 // Route::get('/update', 'VehicleController@update');
