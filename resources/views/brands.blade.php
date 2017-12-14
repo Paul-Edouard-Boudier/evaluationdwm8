@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'test')
+@section('title', 'Admin Pannel')
 @section('main')
     @foreach($brands as $brand)
         <?php $stock = 0?>

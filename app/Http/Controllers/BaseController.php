@@ -11,14 +11,26 @@ use App\Brand;
 class BaseController extends Controller
 {
     public function index() {
-        $vehicles = Vehicle::all();
+        $vehicles = Vehicle::orderBy('id', 'desc')->take(5)->get();
+        //$lastFiveVehicles = array_slice($vehicles, -5);
         // return view('home', ['vehicles' => $vehicles]);
-        $brands = Brand::all();
+        $brands = Brand::orderBy('id', 'desc')->take(5)->get();
         $stockTotal = 0;
-        return view('test', ['brands' => $brands, 'stockTotal' => $stockTotal]);
+//        return view('brands', ['brands' => $brands, 'stockTotal' => $stockTotal]);
+        return view('dashboard', ['brands' => $brands, 'vehicles' => $vehicles, 'stockTotal' => $stockTotal]);
+    }
+    public function createBrand() {
+        $function = 'insert';
+        return view('modifybrand', ['function' => $function]);
+    }
+    public function updateBrand($id) {
+        $brand = Brand::find($id);
+        $name = $brand->name;
+        $function = 'update';
+        return view('modifybrand', ['function' => $function]);
     }
 
-    public function create() {
+    public function createVehicle() {
         $brandsAll = Brand::all();
         $brands = [];
         foreach($brandsAll as $value) {
@@ -53,7 +65,7 @@ class BaseController extends Controller
         ]);
     }
 
-    public function update($id) {
+    public function updateVehicle($id) {
         $vehicle = Vehicle::find($id);
         $brandsAll = Brand::all();
         $brands = [];

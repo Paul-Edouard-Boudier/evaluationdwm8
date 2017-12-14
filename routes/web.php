@@ -12,9 +12,12 @@
 */
 
 Route::get('/', 'BaseController@index');
-Route::get('/create', 'BaseController@create');
+Route::get('/create/vehicle', 'BaseController@createVehicle');
+Route::get('/create/brand', 'BaseController@createBrand');
 // Route::get('/update', 'VehicleController@update');
 Route::get('/vehicle/delete/{id}', 'VehicleController@delete');
-Route::get('/update/{id}', 'BaseController@update');
+Route::get('/vehicle/update/{id}', 'BaseController@updateVehicle');
 Route::post('/vehicle/insert', 'VehicleController@insert');
 Route::post('/vehicle/update', 'VehicleController@updateAction');
+Route::post('/brand/insert', 'BrandController@insert');
+Route::get('/brand/update/{id}', 'BaseController@updateBrand');

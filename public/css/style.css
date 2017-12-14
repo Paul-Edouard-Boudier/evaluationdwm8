@@ -1,0 +1,17 @@
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+}
+.h3-dashboard {
+    text-align: center;
+}
+.brands-dashboard {
+    height: 60vh;
+    width: 33vw;
+    background-color: lightblue;
+}
+.models-dashboard {
+    height: 60vh;
+    width: 40vw;
+    background-color: lightgray;
+}
