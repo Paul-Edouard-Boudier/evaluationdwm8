@@ -24,21 +24,16 @@
                     <td>{{$vehicle->height}}</td>
                     <td>{{$vehicle->boot_capacity}}</td>
                     <td>
-                        @foreach($vehicle->colors as $color)
-                            @if(!empty($vehicle->colors[0]))
+                        @if(!empty($vehicle->colors[0]))
+                            @foreach($vehicle->colors as $color)
                                 <span>{{$color->name}}</span>
-                            @else
-                                <span>Undefined</span>
-                            @endif
                             @endforeach
+                        @else
+                            <span>undefined</span>
+                        @endif
                     </td>
                </tr>
             @endforeach
         </tbody>
     </table>
-    {{--@foreach($vehicles as $vehicle)
-        @if(!empty($vehicle->colors[0]))
-            <p>{{$vehicle->colors}}</p>
-        @endif
-    @endforeach--}}
 @endsection
