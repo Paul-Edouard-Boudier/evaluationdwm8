@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 Route::get('/', 'BaseController@index');
+Route::get('/create', 'BaseController@create');
+// Route::get('/update', 'VehicleController@update');
+Route::get('/vehicle/delete/{id}', 'VehicleController@delete');
+Route::get('/update/{id}', 'BaseController@update');
+Route::post('/vehicle/insert', 'VehicleController@insert');
+Route::post('/vehicle/update', 'VehicleController@updateAction');

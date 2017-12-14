@@ -10,5 +10,6 @@ $factory->define(App\Vehicle::class, function (Faker $faker) {
         'length' => $faker->numberBetween($min = 100, $max = 400),
         'boot_capacity' => $faker->numberBetween($min = 10, $max = 600),
         'type_id' => rand(1, 7),
+        'stock' => rand(1, 14),
     ];
 });

@@ -21,6 +21,7 @@ class CreateVehiclesTable extends Migration
             $table->text('height');
             $table->text('boot_capacity');
             $table->integer('type_id');
+            $table->integer('stock');
             $table->timestamps();
         });
     }
