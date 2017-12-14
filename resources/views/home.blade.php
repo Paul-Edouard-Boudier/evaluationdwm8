@@ -8,6 +8,7 @@
                 {{--<th scope="col">#</th>--}}
                 <th scope="col">Brand</th>
                 <th scope="col">Name</th>
+                <th scope="col">Type</th>
                 <th scope="col">Doors</th>
                 <th scope="col">Length</th>
                 <th scope="col">Height</th>
@@ -22,7 +23,14 @@
                     {{--<td>{{$key + 1}}</td>--}}
                     <td>{{$vehicle->brand[0]->name}}</td>
                     <td>{{$vehicle->name}}</td>
-                    <td>{{$vehicle->doors}}</td>
+                    <td>{{$vehicle->type->name}}</td>
+                    <td>
+                        @if($vehicle->doors == 0)
+                            3
+                        @else
+                            5
+                        @endif
+                    </td>
                     <td>{{$vehicle->length}}</td>
                     <td>{{$vehicle->height}}</td>
                     <td>{{$vehicle->boot_capacity}}</td>

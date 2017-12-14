@@ -36,6 +36,7 @@ class BaseController extends Controller
         $length = null;
         $height = null;
         $boot_capacity = null;
+        $stock = null;
         return view('modify', [
             'function' => $function,
             'brands' => $brands,
@@ -45,6 +46,7 @@ class BaseController extends Controller
             'length' => $length,
             'height' => $height,
             'boot_capacity' => $boot_capacity,
+            'stock' => $stock,
         ]);
     }
 }
