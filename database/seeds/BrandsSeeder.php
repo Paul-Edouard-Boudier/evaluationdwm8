@@ -11,6 +11,7 @@ class BrandsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Brand::class, 8)->create();
+        $this->command->info('Brands : Done');
     }
 }

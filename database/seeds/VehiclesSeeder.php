@@ -11,6 +11,7 @@ class VehiclesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Vehicle::class, 30)->create();
+        $this->command->info('Vehicles : Done');
     }
 }
