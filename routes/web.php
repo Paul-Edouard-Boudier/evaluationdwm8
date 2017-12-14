@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 Route::get('/', 'BaseController@index');
+Route::get('/create', 'BaseController@create');
+Route::get('/update', 'VehicleController@update');
+Route::get('/delete{id}', 'VehicleController@delete');
+Route::post('/vehicle/insert', 'VehcileController@insert');
