@@ -15,6 +15,8 @@
                 <th scope="col">Boot capactiy</th>
                 <th scope="col">Colors</th>
                 <th scope="col">Stock</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +46,22 @@
                         @endif
                     </td>
                    <td>{{$vehicle->stock}}</td>
+                   <td>
+                       <form action="/update/{{$vehicle->id}}">
+                           {{ csrf_field() }}
+                           <button type="submit" class="btn btn-outline-secondary">
+                               <i class="fa fa-pencil" aria-hidden="true"></i>
+                           </button>
+                        </form>
+                   </td>
+                   <td>
+                       <form method="GET" action="/vehicle/delete/{{$vehicle->id}}">
+                           {{ csrf_field() }}
+                           <button type="submit" class="btn btn-outline-danger">
+                               <i class="fa fa-trash-o" aria-hidden="true"></i>
+                           </button>
+                       </form>
+                   </td>
                </tr>
             @endforeach
         </tbody>

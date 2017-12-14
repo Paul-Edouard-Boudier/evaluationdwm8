@@ -20,8 +20,35 @@ class VehicleController extends Controller
         $vehicle->save();
         $vehicle->colors()->attach($request->colors);
         $vehicle->brand()->attach($request->brands);
-        $vehicles = Vehicle::all();
         //dd($vehicle);
-        return view('home', ['vehicles' => $vehicles]);
+        return Redirect('/');
     }
+
+    public function updateAction(Request $request) {
+        // dd($request);
+        $vehicle = Vehicle::find($request->id);
+        $vehicle->name = $request->name;
+        $vehicle->height = $request->height;
+        $vehicle->length = $request->length;
+        $vehicle->boot_capacity = $request->boot_capacity;
+        $vehicle->doors = $request->doors;
+        $vehicle->type_id = $request->types;
+        $vehicle->stock = $request->stock;
+        $vehicle->colors()->detach();
+        $vehicle->brand()->detach();
+        $vehicle->colors()->attach($request->colors);
+        $vehicle->brand()->attach($request->brands);
+        $vehicle->save();
+        // dd($vehicle);
+        return Redirect('/');
+    }
+
+    public function delete($id) {
+        $vehicle = Vehicle::find($id);
+        $vehicle->colors()->detach();
+        $vehicle->brand()->detach();
+        $vehicle->delete();
+        return Redirect('/');
+    }
+
 }

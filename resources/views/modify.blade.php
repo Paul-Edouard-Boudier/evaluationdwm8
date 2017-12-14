@@ -18,7 +18,7 @@
             <div class="form-group">
                 {{{Form::label('types', 'What color(s) is it ?')}}}
                 @foreach($colors as $key => $color)
-                    {{{Form::checkbox('colors', $key)}}}
+                    {{{Form::checkbox('colors[]', $key)}}}
                     {{{Form::label($color, $color)}}}
                 @endforeach
             </div>
@@ -42,6 +42,9 @@
                 {{{Form::label('stock', 'how many do you wanna ad ?')}}}
                 {{{Form::number('stock', $stock, ['min' => 1, 'max' => 50])}}}
             </div>
+            @if(!empty($id))
+                {{{ Form::hidden('id', $id) }}}
+            @endif
             {{{Form::submit('submit')}}}
         {!! Form::close() !!}
     </div>
