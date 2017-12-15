@@ -6,8 +6,8 @@
         <thead>
             <tr>
                 {{--<th scope="col">#</th>--}}
-                <th scope="col">Brand</th>
                 <th scope="col">Name</th>
+                <th scope="col">Brand</th>
                 <th scope="col">Type</th>
                 <th scope="col">Doors</th>
                 <th scope="col">Length (in cm)</th>
@@ -23,9 +23,9 @@
            @foreach($vehicles as $key => $vehicle)
                <tr>
                     {{--<td>{{$key + 1}}</td>--}}
-                    <td>{{$vehicle->brand[0]->name}}</td>
                     <td>{{$vehicle->name}}</td>
-                    <td>{{$vehicle->type->name}}</td>
+                   <td>{{$vehicle->brand[0]->name}}</td>
+                   <td>{{$vehicle->type->name}}</td>
                     <td>
                         @if($vehicle->doors == 0)
                             3

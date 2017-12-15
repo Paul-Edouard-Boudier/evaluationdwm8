@@ -1,6 +1,10 @@
 body {
     background-color: #f3eded;
 }
+.container-heighty {
+    width: 80vw;
+    margin: 0 auto;
+}
 .dashboard {
     display: flex;
     justify-content: space-around;
