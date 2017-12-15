@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'BaseController@index');
-Route::get('/resume', 'BaseController@resume');
+Route::get('/', 'BaseController@resume');
+Route::get('/resume', 'BaseController@index');
 Route::get('/brands', 'BaseController@brands');
 Route::get('/vehicles', 'BaseController@vehicles');
 

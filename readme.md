@@ -12,3 +12,4 @@
 
 ###Lavacharts
 <p> J'ai essayé de faire le graph dans le controlleur au lieu de la vue directement mais j'ai une erreur, j'essayerai plus tard
+<p> Je voulais faire une requete ajax qui, quand on clique sur le graph en bar, je récupère le nom de la marque sur laquelle on clique, puis afficher sur un autre graphique les véhicules de la marque, problème: c'est ocmpliqué...

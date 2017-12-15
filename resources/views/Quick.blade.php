@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="row quick">
-        <div class="block col-md-4 col-12">
+        <div class="block col-md-4 col-12" id="donutchart">
             @foreach($brands as $brand)
             <?php $stock = 0?>
                 @foreach($brand->vehicles as $vehicle)
@@ -22,7 +22,7 @@
             @endforeach
             <p>Number of vehicles: {{$stockTotal}}</p>
         </div>
-        <div class="block col-md-4 col-12" id="graph">
+        <div class="block col-md-4 col-12" id="barchart">
         </div>
     </div>
     <div class="row quick">
@@ -38,15 +38,33 @@
     <?php
         $stocks  = Lava::DataTable();
         $stocks->addStringColumn('Stocks')
-            ->addNumberColumn('Stocks');
+                ->addNumberColumn('Stocks');
+        $dataVehicle  = Lava::DataTable();
+        $dataVehicle->addStringColumn('Vehicles')
+                    ->addNumberColumn('Vehicles')
     ?>
     @foreach($brands as $brand)
         <?php $stock = 0 ?>
             @foreach($brand->vehicles as $vehicle)
-                <?php $stock += intval($vehicle->stock) ?>
+                <?php
+                    $stockVehicle = 0;
+                    $stock += intval($vehicle->stock);
+                    /*$stockVehicle += intval($vehicle->stock);
+                    $dataVehicle = $dataVehicle->addRow($vehicle->name, $stockVehicle);*/
+                ?>
             @endforeach
         <?php $stocks = $stocks->addRow(["$brand->name", $stock])?>
     @endforeach
     <?php Lava::BarChart('Stocks', $stocks) ?>
-    {!!\Lava::render('BarChart', 'Stocks', 'graph') !!}
+    {!!\Lava::render('BarChart', 'Stocks', 'barchart') !!}
+
+
+
+    <?php
+/*    $dataVehicle  = Lava::DataTable();
+    $dataVehicle->addStringColumn('Vehicles')
+        ->addNumberColumn('Vehicles')
+    */?>
+    <?php Lava::DonutChart('Vehicles', $dataVehicle) ?>
+    {{--{!!\Lava::render('DonutChart', 'Vehicles', 'donutchart') !!}--}}
 @endsection
