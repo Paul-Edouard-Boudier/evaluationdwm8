@@ -1,3 +1,6 @@
+body {
+    background-color: #f3eded;
+}
 .dashboard {
     display: flex;
     justify-content: space-around;
@@ -18,18 +21,78 @@
 
 .block {
     border: 1px solid black;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+.colored {
+    background-color: white;
+}
+.colored-table {
+    /*background-color: #00BCD4;*/
+    background-color: white;
+}
+.colored-brand {
+    background-color: #E3C96C;
+}
+.colored-vehicles {
+    background-color: #F1A52A;
+}
+.colored-stock {
+    background-color: #D6662F;
+}
+.chart {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-right-width: 1px;
+    border-left-width: 01px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid black;
     height: 22vh;
     width: 150px;
     margin: 15px 0;
 }
-.colored {
-    background-color: lightcoral;
+.grow:hover {
+    /*-webkit-transform: scale(1.2);*/
+    /*-ms-transform: scale(1.2);*/
+    /*transform: scale(1.2);*/
+    box-shadow: 2px 2px 2px #888888;
 }
-
 .quick {
     display: flex;
     justify-content: space-around;
 }
 .click {
     cursor: pointer;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parent-fill {
+    height: 100%;
+    width: 100%;
+}
+.count {
+    font-size: 40px;
+    text-align: center;
+}
+.fa-pie-chart {
+    color: #6BA5B7
+}
+.fa-table {
+    color: #E53935;
+}
+.fa-cubes {
+    color: #63A96A;
+}
+.fa-plus {
+    color: #465D82;
 }
