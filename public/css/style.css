@@ -5,9 +5,15 @@ body {
     width: 80vw;
     margin: 0 auto;
 }
-.dashboard {
+.container-perso {
     display: flex;
     justify-content: space-around;
+    padding-bottom: 25px;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .h3-dashboard {
     text-align: center;

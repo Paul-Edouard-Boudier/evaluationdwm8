@@ -26,16 +26,33 @@
             ?>
             <div class="col-md-3 col-6">
                 <h3>{{$brand->name}}</h3>
-                <ul>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">type</th>
+                        <th scope="col">stock</th>
+                    </tr>
+                    </thead>
+                    <tbody>
                     @foreach($brand->vehicles as $vehicle)
+                        <tr>
                         <?php $stock += intval($vehicle->stock) ?>
                         @if($vehicle->stock > 0)
-                            <li><a href="{{url('/vehicle/update/'.$vehicle->id)}}">{{$vehicle->name}}</a>, stock: {{$vehicle->stock}}</li>
+                            <td><a href="{{url('/vehicle/update/'.$vehicle->id)}}">{{$vehicle->name}}</a></td>
+                            <td>{{$vehicle->type->name}}</td>
+                            <td>{{$vehicle->stock}}</td>
                         @endif
+                        </tr>
                     @endforeach
-                </ul>
-                <?php $stockTotal += $stock?>
-                <p>Total: {{$stock}}</p>
+                    <?php $stockTotal += $stock?>
+                    <tr>
+                        <td>Total</td>
+                        <td></td>
+                        <td>{{$stock}}</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
             <?= $graph ?>
         </div>
@@ -57,7 +74,13 @@
     @endforeach
     <?php Lava::BarChart('Stocks', $stocks) ?>
     {!!\Lava::render('BarChart', 'Stocks', 'barchart') !!}
-    <p>Total Stock: {{$stockTotal}}</p>
-    <div id="barchart"></div>
+    <div class="row">
+        <div class="col-md-2 col-6 flex-center">
+            <p>Total Stock: {{$stockTotal}}</p>
+        </div>
+        <div class="col-md-9 col-6">
+            <div id="barchart"></div>
+        </div>
+    </div>
 
 @endsection
