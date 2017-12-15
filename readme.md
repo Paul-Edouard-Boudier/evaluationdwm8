@@ -29,5 +29,6 @@
 
 #### Notes
 <p> Les liens sur la page d'acceuil ne se font pas en cliquant sur les balises "a" mais en cliquant sur la "div" contenant la balise, puis je récupère le contenu href de la balise <a> en jquery, et renvoie à l'url de ce href, toujours en jquery
-<p> Plutôt fier de l'intégration de Lavacharts, même si finalement suivre la doc suffit.  
+<p> Plutôt fier de l'intégration de Lavacharts, même si finalement suivre la doc suffit.
+<p> La base de données est remplis grâce aux migrations et Factories etc...  
 
