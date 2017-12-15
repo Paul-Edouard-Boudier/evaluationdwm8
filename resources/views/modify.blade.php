@@ -5,7 +5,7 @@
         {!! Form::open(['url' => '/vehicle/'.$function]) !!}
             <div class="form-group">
                 {{{Form::label('brands', 'which brand is it from ?')}}}
-                {{{Form::select('brands', $brands)}}}
+                {{{Form::select('brands', $brands, $defaultBrand)}}}
             </div>
             <div class="form-group">
                 {{{Form::label('name', 'name') }}}

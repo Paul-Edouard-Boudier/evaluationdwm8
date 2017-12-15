@@ -47,7 +47,7 @@ class BaseController extends Controller
         return view('quick', ['brands' => $brands, 'vehicles' => $vehicles, 'stockTotal' => $stockTotal, 'firstBrand' => $firstBrand]);
     }
 
-    public function createBrand() {
+/*    public function createBrand() {
         $function = 'insert';
         return view('modifybrand', ['function' => $function]);
     }
@@ -56,7 +56,7 @@ class BaseController extends Controller
         $name = $brand->name;
         $function = 'update';
         return view('modifybrand', ['function' => $function]);
-    }
+    }*/
 
     public function createVehicle() {
         $brandsAll = Brand::all();
@@ -80,6 +80,7 @@ class BaseController extends Controller
         $height = null;
         $boot_capacity = null;
         $stock = null;
+        $defaultBrand = null;
         return view('modify', [
             'function' => $function,
             'brands' => $brands,
@@ -90,6 +91,7 @@ class BaseController extends Controller
             'height' => $height,
             'boot_capacity' => $boot_capacity,
             'stock' => $stock,
+            'defaultBrand' => $defaultBrand,
         ]);
     }
 
@@ -116,6 +118,7 @@ class BaseController extends Controller
         $height = $vehicle->height;
         $boot_capacity = $vehicle->boot_capacity;
         $stock = $vehicle->stock;
+        $defaultBrand = $vehicle->brand;
         return view('modify', [
             'function' => $function,
             'brands' => $brands,
@@ -126,6 +129,7 @@ class BaseController extends Controller
             'height' => $height,
             'boot_capacity' => $boot_capacity,
             'stock' => $stock,
+            'defaultBrand' => $defaultBrand,
             'id' => $id,
         ]);
     }
