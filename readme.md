@@ -8,4 +8,7 @@
 
 ##TODO
 <p> J'ai voulu implémenter le fait d'ajouter des marques mais ça aurait perturbé toutes mes tables, j'y reviendrai si j'ai le temps.
-<p> J'ai commencé mais pas finis.
+(j'ai commencé mais pas finis.)
+
+###Lavacharts
+<p> J'ai essayé de faire le graph dans le controlleur au lieu de la vue directement mais j'ai une erreur, j'essayerai plus tard

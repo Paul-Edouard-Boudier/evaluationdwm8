@@ -7,6 +7,7 @@ use App\Vehicle;
 use App\Color;
 use App\Type;
 use App\Brand;
+use Khill\Lavacharts\Lavacharts;
 
 class BaseController extends Controller
 {
@@ -42,6 +43,19 @@ class BaseController extends Controller
         $vehicles = Vehicle::All();
         $brands = Brand::all();
         $stockTotal = 0;
+
+        /*$votes  = \Lava::DataTable();
+
+        $votes->addStringColumn('Food Poll')
+            ->addNumberColumn('Votes')
+            ->addRow(['Tacos',  rand(1000,5000)])
+            ->addRow(['Salad',  rand(1000,5000)])
+            ->addRow(['Pizza',  rand(1000,5000)])
+            ->addRow(['Apples', rand(1000,5000)])
+            ->addRow(['Fish',   rand(1000,5000)]);
+
+        Lava::BarChart('Votes', $votes);*/
+
         return view('quick', ['brands' => $brands, 'vehicles' => $vehicles, 'stockTotal' => $stockTotal]);
     }
 
