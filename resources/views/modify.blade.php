@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
                 {{{Form::label('stock', 'how many do you wanna ad ?')}}}
-                {{{Form::number('stock', $stock, ['min' => 1, 'max' => 50])}}}
+                {{{Form::number('stock', $stock, ['min' => 0, 'max' => 50])}}}
             </div>
             @if(!empty($id))
                 {{{ Form::hidden('id', $id) }}}

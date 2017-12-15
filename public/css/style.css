@@ -17,14 +17,19 @@
 }
 
 .block {
-    background-color: lightcoral;
     border: 1px solid black;
     height: 22vh;
     width: 150px;
     margin: 15px 0;
 }
+.colored {
+    background-color: lightcoral;
+}
 
 .quick {
     display: flex;
     justify-content: space-around;
+}
+.click {
+    cursor: pointer;
 }
