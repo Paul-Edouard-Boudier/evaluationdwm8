@@ -41,13 +41,15 @@ class BaseController extends Controller
 
     public function resume() {
         $vehicles = Vehicle::All();
+        $l5v = Vehicle::orderBy('id', 'desc')->take(5)->get();
+        $l5b = Brand::orderBy('id', 'desc')->take(5)->get();
         $brands = Brand::all();
         $stockTotal = 0;
         $firstBrand = Brand::find(1);
-        return view('quick', ['brands' => $brands, 'vehicles' => $vehicles, 'stockTotal' => $stockTotal, 'firstBrand' => $firstBrand]);
+        return view('quick', ['brands' => $brands, 'vehicles' => $vehicles, 'stockTotal' => $stockTotal, 'firstBrand' => $firstBrand, 'l5v' => $l5v, 'l5b' => $l5b]);
     }
 
-/*    public function createBrand() {
+    public function createBrand() {
         $function = 'insert';
         return view('modifybrand', ['function' => $function]);
     }
@@ -56,7 +58,7 @@ class BaseController extends Controller
         $name = $brand->name;
         $function = 'update';
         return view('modifybrand', ['function' => $function]);
-    }*/
+    }
 
     public function createVehicle() {
         $brandsAll = Brand::all();
@@ -79,7 +81,7 @@ class BaseController extends Controller
         $length = null;
         $height = null;
         $boot_capacity = null;
-        $stock = null;
+        $stock = 0;
         $defaultBrand = null;
         return view('modify', [
             'function' => $function,

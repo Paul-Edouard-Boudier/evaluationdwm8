@@ -39,8 +39,8 @@
                 {{{Form::select('doors', [3, 5])}}}
             </div>
             <div class="form-group">
-                {{{Form::label('stock', 'how many do you wanna ad ?')}}}
-                {{{Form::number('stock', $stock, ['min' => 0, 'max' => 50])}}}
+                {{{Form::label('stock', 'how many do you wanna ad or remove ? (currently: '.$stock.')')}}}
+                {{{Form::number('stock', null, ['min' => -50, 'max' => 50])}}}
             </div>
             @if(!empty($id))
                 {{{ Form::hidden('id', $id) }}}

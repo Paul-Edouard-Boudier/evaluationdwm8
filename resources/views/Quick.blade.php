@@ -20,19 +20,29 @@
         </div>
     </div>
     <div class="row quick">
-        <div class="block col-md-4 col-12 chart" id="donutchart">
+        {{--<div class="block col-md-4 col-12 chart" id="donutchart">
+        </div>--}}
+        <div class="block col-md-4 col-12 click colored">
+            <p>Add a vehicle to your garage</p>
+            <a href="{{url('/create/vehicle')}}"></a>
         </div>
         <div class="block col-md-4 col-12 chart" id="barchart">
         </div>
     </div>
     <div class="row quick">
         <div class="block col-md-3 col-12 click colored">
-            <p>Add a brand to your garage</p>
-            <a href="{{url('/create/brand')}}"></a>
+            <p>Last 5 brands:</p>
+            @foreach($l5b as $brand)
+                <p>{{$brand->name}}</p>
+            @endforeach
+            <a href="{{url('/l5b')}}"></a>
         </div>
         <div class="block col-md-3 col-12 click colored">
-            <p>Add a vehicle to your garage</p>
-            <a href="{{url('/create/vehicle')}}"></a>
+            <p>last models added</p>
+            @foreach($l5v as $vehicle)
+                <p>{{$vehicle->name}}</p>
+            @endforeach
+            <a href="{{url('/l5v')}}"></a>
         </div>
     </div>
     <?php
@@ -64,5 +74,5 @@
         ?>
     @endforeach
     <?php Lava::DonutChart('Vehicles', $dataVehicle) ?>
-    {!!\Lava::render('DonutChart', 'Vehicles', 'donutchart') !!}
+    {{--{!!\Lava::render('DonutChart', 'Vehicles', 'donutchart') !!}--}}
 @endsection
